@@ -5,5 +5,6 @@ import "basic-golang-udemy/helper"
 
 func main() {
 	helper.SayHello("Hanif")
+	// helper.sayGoodBye("Hanif") // cannot be used because of access modifier
 
 }
