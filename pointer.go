@@ -6,6 +6,15 @@ type Address struct {
 	City, Province, Country string
 }
 
+func ChangeCountryToIndonesia(address Address) {
+	address.Country = "Indonesia"
+}
+
+// Function with pointer use * operator
+func ChangeCountryToIndonesiaWithPointer(address *Address) {
+	address.Country = "Indonesia"
+}
+
 func main() {
 
 	/*
@@ -44,4 +53,17 @@ func main() {
 	fmt.Println(address1) // Will change
 	fmt.Println(address2) // Will change
 	fmt.Println(address3)
+
+	address := Address{
+		City:     "Yogyakarta",
+		Province: "DI Yogyakarta",
+		Country:  "",
+	}
+
+	ChangeCountryToIndonesia(address)
+	fmt.Println(address) // country will blank
+
+	// arguments must use & operator because it's params is pointer
+	ChangeCountryToIndonesiaWithPointer(&address)
+	fmt.Println(address) // country will reference it's function
 }
